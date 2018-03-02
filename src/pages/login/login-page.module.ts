@@ -1,17 +1,17 @@
-import { LoginBackgroundVideoPage } from './login-page';
+import { LoginPage } from './login-page';
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 
 @NgModule({
   declarations: [
-    LoginBackgroundVideoPage,
+    LoginPage,
   ],
   imports: [
-    IonicPageModule.forChild(LoginBackgroundVideoPage),
+    IonicPageModule.forChild(LoginPage),
   ],
   exports: [
-    LoginBackgroundVideoPage
+    LoginPage
   ]
 })
 
-export class LoginBackgroundVideoPageModule { }
+export class LoginPageModule { }

@@ -7,7 +7,7 @@ import {Storage} from "@ionic/storage";
 
 
 @Injectable()
-export class FacebookService {
+export class AuthService {
   constructor(private face: Facebook, private angularDB: AngularFireDatabase,
               private angularAuth: AngularFireAuth,
               private storage: Storage) {  }
@@ -44,6 +44,19 @@ export class FacebookService {
       })
 
   }
+
+  hasLoggedIn(){
+    return this.storage.get('mobileUser');
+  };
+
+  signOut() {
+    this.angularAuth.auth.signOut()
+      .then(() => {
+        this.storage.remove('mobileUser')
+      })
+  };
+
+
 
   emailLogin(){
     // TODO: Email

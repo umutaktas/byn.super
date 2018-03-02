@@ -1,0 +1,18 @@
+<ion-menu [content]="content" >
+  <ion-content>
+    <div class="menu-header animated fadeInDown">
+      <img src="assets/img/biyone_logo.png" width="200px">
+    </div>
+    <ion-list>
+      <ion-scroll scrollY="true" class="animated fadeInUp">
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
+        <button ion-item class="icon-right" menuClose (click)="logout()">
+          Çıkış
+        </button>
+      </ion-scroll>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav #content [root]="rootPage"></ion-nav>

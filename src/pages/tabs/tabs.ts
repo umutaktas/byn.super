@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import {IonicPage, NavController} from 'ionic-angular';
 
 import { Tab1Root } from '../pages';
 import { Tab2Root } from '../pages';
@@ -27,4 +27,6 @@ export class TabsPage {
       this.tab3Title = values['TAB3_TITLE'];
     });
   }
+
+
 }

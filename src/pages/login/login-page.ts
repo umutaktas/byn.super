@@ -7,9 +7,9 @@ import {TranslateService} from "@ngx-translate/core";
 @IonicPage()
 @Component({
   selector: 'page-login-background-video',
-  templateUrl: 'login-background-video.html'
+  templateUrl: 'login-page.html'
 })
-export class LoginBackgroundVideoPage {
+export class LoginPage {
 
   @ViewChild('player') player;
 

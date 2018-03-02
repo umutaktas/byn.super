@@ -49,6 +49,11 @@ export class User {
     return seq;
   }
 
+  loginFB() {
+     return this.api.facebookLogin()
+  }
+
+
   /**
    * Send a POST request to our signup endpoint with the data
    * the user entered on the form.

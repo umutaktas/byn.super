@@ -8,12 +8,18 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
 import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
+import {AngularFireModule} from "angularfire2";
+import {environment} from "../environment/environment";
+import {BiyoneService} from "../providers/api/biyone.service";
+import {AngularFireDatabaseModule} from "angularfire2/database";
+import {AngularFireAuthModule} from "angularfire2/auth";
+import {AuthService} from "../providers/api/auth.service";
+import {Facebook} from "@ionic-native/facebook";
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -33,7 +39,7 @@ export function provideSettings(storage: Storage) {
     option2: 'Ionitron J. Framework',
     option3: '3',
     option4: 'Hello'
-  });
+});
 }
 
 @NgModule({
@@ -51,7 +57,10 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -64,6 +73,9 @@ export function provideSettings(storage: Storage) {
     Camera,
     SplashScreen,
     StatusBar,
+    BiyoneService,
+    AuthService,
+    Facebook,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }

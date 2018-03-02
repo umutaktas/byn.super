@@ -1,5 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {AuthService} from "./auth.service";
 
 /**
  * Api is a generic REST Api handler. Set your API url first.
@@ -8,8 +9,27 @@ import { Injectable } from '@angular/core';
 export class Api {
   url: string = 'https://example.com/api/v1';
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, private authService: AuthService) {
   }
+
+
+  facebookLogin() {
+    return this.authService.facebookLogin()
+  }
+
+  signOut() {
+    return this.authService.signOut()
+
+  }
+
+  hasLoggedIn() {
+    return this.authService.hasLoggedIn()
+  }
+    /*
+    *
+    * Bellow code is contain HTTP Restfull Methods
+    *
+    * */
 
   get(endpoint: string, params?: any, reqOpts?: any) {
     if (!reqOpts) {
