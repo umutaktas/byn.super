@@ -3,6 +3,8 @@ import {NavController, IonicPage, ToastController} from 'ionic-angular';
 import {User} from "../../providers/providers";
 import {MainPage} from "../pages";
 import {TranslateService} from "@ngx-translate/core";
+import {switchAll} from "rxjs/operators";
+import swal from 'sweetalert2'
 
 @IonicPage()
 @Component({

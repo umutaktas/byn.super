@@ -1,5 +1,6 @@
 page-login-background-video {
-  video#bgvid {
+
+  video{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -9,8 +10,8 @@ page-login-background-video {
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
   }
+
   .logo {
     width: 70%;
     height: auto;
