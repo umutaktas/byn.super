@@ -3,8 +3,6 @@ import {NavController, IonicPage, ToastController} from 'ionic-angular';
 import {User} from "../../providers/providers";
 import {MainPage} from "../pages";
 import {TranslateService} from "@ngx-translate/core";
-import {switchAll} from "rxjs/operators";
-import swal from 'sweetalert2'
 
 @IonicPage()
 @Component({
@@ -29,13 +27,13 @@ export class LoginPage {
       this.loginErrorString = value;
     })
 
-    this.player.nativeElement.src = '';
-    this.player.nativeElement.load();
+ //   this.player.nativeElement.src = '';
+//    this.player.nativeElement.load();
   }
 
   ionViewWillEnter() {
-    this.player.nativeElement.src = 'assets/video/background-480.mp4';
-    this.player.nativeElement.load();
+ //   this.player.nativeElement.src = 'assets/video/background-480.mp4';
+ //  this.player.nativeElement.load();
   }
 
   ionViewDidLoad() {

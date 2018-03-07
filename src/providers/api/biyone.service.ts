@@ -1,16 +1,23 @@
 import {Injectable} from "@angular/core";
 import {AngularFireDatabase} from "angularfire2/database";
-import {AngularFireAuth} from "angularfire2/auth";
 import {Storage} from "@ionic/storage";
+import {AuthService} from "./auth.service";
 
 
 @Injectable()
 export class BiyoneService {
-  constructor(private angularFB: AngularFireDatabase, private angularAuth: AngularFireAuth,private storage: Storage) {
+  constructor(private angularDB: AngularFireDatabase, private authService: AuthService,private storage: Storage) {
 
   }
-  getUserStatus(){
-       return this.storage.get('user');
-    }
+
+  getAllDiscounts() {
+     return this.angularDB.list('myDiscounts')
+       .snapshotChanges().map( action => {
+       return action.map(c => ({ key: c.payload.key ,... c.payload.val()}));
+     });
+
+  }
+
+
   }
 

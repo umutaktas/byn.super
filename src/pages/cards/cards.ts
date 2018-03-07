@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import {Api} from "../../providers/api/api";
+import {BiyoneService} from "../../providers/api/biyone.service";
+import {Observable} from "rxjs/Observable";
 
 @IonicPage()
 @Component({
@@ -7,8 +10,16 @@ import { IonicPage, NavController } from 'ionic-angular';
   templateUrl: 'cards.html'
 })
 export class CardsPage {
-  cardItems: any[];
+  cardItems: Observable<any[]>;
 
+
+  constructor(private api: Api) {
+    this.cardItems = this.api.getAllDiscounts()
+  }
+
+
+
+  /*
   constructor(public navCtrl: NavController) {
     this.cardItems = [
       {
@@ -41,4 +52,5 @@ export class CardsPage {
     ];
 
   }
+  */
 }

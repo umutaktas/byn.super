@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {AuthService} from "./auth.service";
+import {BiyoneService} from "./biyone.service";
 
 /**
  * Api is a generic REST Api handler. Set your API url first.
@@ -9,7 +10,7 @@ import {AuthService} from "./auth.service";
 export class Api {
   url: string = 'https://example.com/api/v1';
 
-  constructor(public http: HttpClient, private authService: AuthService) {
+  constructor(public http: HttpClient, private authService: AuthService, private biyoneService: BiyoneService) {
   }
 
 
@@ -25,7 +26,21 @@ export class Api {
   hasLoggedIn() {
     return this.authService.hasLoggedIn()
   }
-    /*
+
+  getAllDiscounts() {
+    return this.biyoneService.getAllDiscounts()
+  }
+
+
+
+
+
+
+
+
+
+
+  /*
     *
     * Bellow code is contain HTTP Restfull Methods
     *

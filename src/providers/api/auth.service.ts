@@ -56,10 +56,13 @@ export class AuthService {
       })
   };
 
-
+  getUserStatus(){
+    return this.storage.get('user');
+  }
 
   emailLogin(){
     // TODO: Email
   }
 
 }
+
