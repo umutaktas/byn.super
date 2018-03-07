@@ -27,13 +27,13 @@ export class LoginPage {
       this.loginErrorString = value;
     })
 
- //   this.player.nativeElement.src = '';
-//    this.player.nativeElement.load();
+   this.player.nativeElement.src = '';
+   this.player.nativeElement.load();
   }
 
   ionViewWillEnter() {
- //   this.player.nativeElement.src = 'assets/video/background-480.mp4';
- //  this.player.nativeElement.load();
+    this.player.nativeElement.src = 'assets/video/background-480.mp4';
+    this.player.nativeElement.load();
   }
 
   ionViewDidLoad() {

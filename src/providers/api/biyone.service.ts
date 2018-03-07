@@ -12,9 +12,19 @@ export class BiyoneService {
 
   getAllDiscounts() {
      return this.angularDB.list('myDiscounts')
-       .snapshotChanges().map( action => {
-       return action.map(c => ({ key: c.payload.key ,... c.payload.val()}));
-     });
+       .snapshotChanges()
+       .map((items => {
+         return items.map((firma) => {
+            firma.payload. =
+         })
+       }))
+  }
+
+  getAllDiscounts1() {
+    return this.angularDB.list('myDiscounts')
+      .snapshotChanges().map( action => {
+        return action.map(c => ({ key: c.payload.key ,... c.payload.val()}));
+      });
 
   }
 
