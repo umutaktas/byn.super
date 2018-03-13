@@ -31,7 +31,9 @@ export class Api {
     return this.biyoneService.getAllDiscounts()
   }
 
-
+ getFirmImage(uid) {
+   // return this.biyoneService.getFirm(uid)
+ }
 
 
 
